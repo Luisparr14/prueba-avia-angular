@@ -1,3 +1,4 @@
+import { environment } from './../environments/environment';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
@@ -13,12 +14,12 @@ export interface Hotel {
 @Injectable({
   providedIn: 'root'
 })
-export class HotelsService {
+export class HotelsService {  
   constructor(
     private http: HttpClient
   ) { }
 
   getHotels() {
-    return this.http.get<Hotel[]>('http://localhost:3000/api/v1/hotels');
+    return this.http.get<Hotel[]>(environment.apiUrl);
   }
 }
