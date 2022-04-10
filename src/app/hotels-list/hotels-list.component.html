@@ -1,0 +1,25 @@
+<section class="hotels-list">  
+  <div class="hotel" *ngFor="let hotel of hotels">    
+    <img class="image-hotel" [src]="'assets/images/hotels/'+hotel.image" />
+    <div class="info-hotel">
+      <h2>{{hotel.name}}</h2>
+      <div>
+        <app-star *ngFor="let i of [].constructor(hotel?.stars)" [fillColor]="'yellow'">              
+        </app-star>
+      </div>
+      <div>
+        <span *ngFor="let amenities of hotel.amenities">
+          <img class="amenitie" [src]="'assets/icons/amenities/'+amenities+'.svg'" />
+        </span>
+      </div>
+    </div>
+    <div class="separator"></div>
+    <div class="price-info">
+      <p>Precio por noche por habitación</p>
+      <div class="price"><span>ARG </span><span>{{hotel.price}}</span></div>
+      <button class="button" type="button" (click)="infoHotel(hotel)">
+        Ver Hotel
+      </button>
+    </div>
+  </div>  
+</section>

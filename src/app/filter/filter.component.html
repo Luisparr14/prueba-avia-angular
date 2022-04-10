@@ -1,0 +1,80 @@
+<section class="filter">
+  <button type="button" class="btn filter_toggle__button" (click)="collapse()">
+    <i class="fas fa-filter"></i><p>Filtrar</p>
+  </button>
+  <div id="filter-i" class="filter-items filter-items-collapse">
+    <section>
+      <div class="header_search_name" >
+        <img class="search" src="assets/icons/filters/search.svg" />
+        <h3>Nombre del hotel</h3>
+      </div>
+      <div class="separator"></div>
+      <form [formGroup]="filterForm" (ngSubmit)="onSubmit()">
+        <div class="input-name">
+          <div class="input-search">
+            <img class="search" src="assets/icons/filters/bed.svg"/>
+            <input type="text" id="nombre" formControlName="nombre" placeholder="Hotel" />
+          </div>
+        </div>
+        <div>
+          <div class="separator"></div>
+          <div class="header_search_star">
+            <app-star [fillColor]="'black'">              
+            </app-star>
+            <h3>
+              Estrellas
+            </h3>
+          </div>
+          <div class="separator"></div>
+          <!-- checkbox group -->
+          <div class="checkbox-group">
+            <div class="checkbox-group__item">
+              <input type="checkbox" id="allStars" formControlName="allStars" />
+              <label for="allStars">
+                Todas las estrellas
+              </label>
+            </div>
+            <div class="checkbox-group__item">
+              <input type="checkbox" id="fiveStars" formControlName="fiveStars" />
+              <label for="fiveStars">
+                <app-star *ngFor="let i of [].constructor(5)" [fillColor]="'yellow'">              
+                </app-star>
+              </label>
+            </div>
+            <div class="checkbox-group__item">
+              <input type="checkbox" id="fourStars" formControlName="fourStars" />
+              <label for="fourStars">
+                <app-star *ngFor="let i of [].constructor(4)" [fillColor]="'yellow'">              
+                </app-star>
+              </label>
+            </div>
+            <div class="checkbox-group__item">
+              <input type="checkbox" id="threeStars" formControlName="threeStars" />
+              <label for="threeStars">
+                <app-star *ngFor="let i of [].constructor(3)" [fillColor]="'yellow'">              
+                </app-star>
+              </label>
+            </div>
+            <div class="checkbox-group__item">
+              <input type="checkbox" id="twoStars" formControlName="twoStars" />
+              <label for="twoStars">
+                <app-star *ngFor="let i of [].constructor(2)" [fillColor]="'yellow'">              
+                </app-star>
+              </label>
+            </div>
+            <div class="checkbox-group__item">
+              <input type="checkbox" id="oneStar" formControlName="oneStar" />
+              <label for="oneStar">
+                <app-star *ngFor="let i of [].constructor(1)" [fillColor]="'yellow'">              
+                </app-star>
+              </label>
+            </div>
+          </div>
+        </div>
+        <button type="submit">
+          Buscar
+        </button>
+      </form>
+    </section>
+  </div>
+</section>

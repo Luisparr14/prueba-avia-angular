@@ -1,0 +1,98 @@
+.filter {
+  position: relative;
+  top: 60px;
+}
+
+.filter_toggle__button {
+  display: flex;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 5px;
+  border: 1px solid #aaa;
+  box-shadow: 0px 5px 10px 0px #ccc;
+  color: blue;
+  align-items: center;
+  margin-left: 5px ;
+}
+
+.filter_toggle__button p{
+  margin-left: 10px;
+}
+
+.filter-items {
+  transition: height 0.5s ease;
+  height: 440px;
+  overflow: hidden;
+}
+
+.filter-items-collapse {
+  transition: height 0.5s ease;
+  height: 0px;
+  overflow: hidden;
+}
+
+.checkbox-group__item {
+  font-size: large;
+}
+
+.input-name {
+  display: flex;
+  flex-direction: column;
+  padding: 0 5px;
+  margin-bottom: 30px;
+}
+
+.input-search {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border: 0px;
+  padding-left: 30px;
+}
+
+.input-search input {
+  padding: 10px;
+  border-radius: 5px;
+  border: 0px;
+  border-bottom: 1px solid #aaa;
+}
+
+.search {
+  height: 23px;
+  margin-right: 5px;
+}
+
+.filter {
+  background-color: #fff;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16);
+}
+
+.header_search_name,
+.header_search_star {
+  padding-left: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+h3 {
+  margin-left: 20px;
+}
+
+.separator {
+  margin: 10px 0px 20px 0px;
+  width: 100%;
+  border: 0.3px solid #ececec;
+}
+
+@media screen and (min-width: 720px) {
+
+  .filter-items-collapse,
+  .filter-items {
+    height: auto;
+  }
+
+  .filter_toggle__button {
+    display: none;
+  }
+}
