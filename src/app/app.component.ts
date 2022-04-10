@@ -8,14 +8,14 @@ import { HotelsService, Hotel } from './hotels.service';
 export class AppComponent implements OnInit {
   title = 'PruebaAvia';
   hotels: Hotel[] = [];
-  hotelsPersistance: Hotel[] = [];
   constructor(
     private hotelsService: HotelsService
   ) { }
 
   Buscar(event: any) {
-    console.log(event);
-    this.hotels = this.hotelsPersistance.filter(hotel => {
+    console.log(event);    
+    let hotelsStorage = JSON.parse(window.localStorage.getItem('hotels') || '[]');
+    this.hotels = hotelsStorage.filter((hotel: Hotel) => {
       if (hotel.name.toLowerCase().includes(event?.nombre?.toLowerCase())) {
         if (event?.allStars) {
           return hotel;
@@ -57,7 +57,7 @@ export class AppComponent implements OnInit {
     this.hotelsService.getHotels().subscribe(
       (hotels: Hotel[]) => {
         this.hotels = hotels;
-        this.hotelsPersistance = hotels;
+        window.localStorage.setItem('hotels', JSON.stringify(hotels));
       }
     );
   }

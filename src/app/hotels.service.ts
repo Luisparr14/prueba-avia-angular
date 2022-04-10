@@ -19,6 +19,6 @@ export class HotelsService {
   ) { }
 
   getHotels() {
-    return this.http.get<Hotel[]>('http://localhost:3000/api/v1/hotels')
+    return this.http.get<Hotel[]>('http://localhost:3000/api/v1/hotels');
   }
 }
