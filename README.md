@@ -6,7 +6,7 @@ Este proyecto trabaja en conjunto con un backend construido en node JS con expre
 
 Para acceder a dicho repositorio clonelo <a href="https://github.com/Luisparr14/prueba-avia">aqui</a>
 
-## Servidor integrado de angular para desarrolo
+## Instalacion de dependencias
 
 Antes que nada debe instalar las dependencias con el siguente comando en la terminal.
 
