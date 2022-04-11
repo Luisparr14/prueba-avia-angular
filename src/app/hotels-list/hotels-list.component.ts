@@ -18,6 +18,6 @@ export class HotelsListComponent implements OnInit {
   }
 
   infoHotel(hotel: Hotel){
-    window.alert(`Hotel: ${hotel.name} \nPrecio: ${hotel.price} \nEstrellas: ${hotel.stars} \nAmenities: \n${hotel.amenities.map(amenity => ' '+amenity + '\n')}`);
+    window.alert(`Hotel: ${hotel.name} \nPrecio: ${hotel.price} \nEstrellas: ${hotel.stars} \nAmenities: ${new Intl.ListFormat().format(hotel.amenities)}`);
   }
 }
