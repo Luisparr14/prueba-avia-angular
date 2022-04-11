@@ -1,12 +1,13 @@
+import { environment } from './../../environments/environment';
 import { Component, OnInit, Input } from '@angular/core';
-import { HotelsService, Hotel } from '../hotels.service';
+import { Hotel } from '../hotels.service';
 @Component({
   selector: 'app-hotels-list',
   templateUrl: './hotels-list.component.html',
   styleUrls: ['./hotels-list.component.css']
 })
 export class HotelsListComponent implements OnInit {
-  
+  apiUrl: string = environment.apiUrl;
   @Input() hotels!: Hotel[];
 
   constructor(
